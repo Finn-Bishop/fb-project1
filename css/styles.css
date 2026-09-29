@@ -181,6 +181,12 @@
   clip-path: polygon(var(--slant) 0, 100% 0, 100% 100%, 0 100%);
 }
 
+/* The link fills the panel so the image inside can still stretch to full height */
+.panel a {
+  display: block;
+  height: 100%;
+}
+
 .panel img {
   display: block;
   width: 100%;

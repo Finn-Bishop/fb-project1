@@ -99,6 +99,22 @@ body {
   margin-top: 1.5rem;
 }
 
+/* Collapsible summary box, placed like the code box above the cards */
+.summary-box {
+  width: 100%;
+  max-width: calc(3 * 260px + 2 * 1.5rem); /* same width as a full row of cards */
+  margin: auto auto 0; /* pushed to the bottom and centred */
+  padding: 1rem;
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-radius: 8px;
+  font-family: Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+.summary-box + .card-container {
+  margin-top: 1.5rem;
+}
+
 /* Top strip with the language label and the copy button */
 .code-header {
   display: flex;
@@ -114,7 +130,7 @@ body {
 .code-example pre {
   margin: 0;
   padding: 1rem;
-  overflow-x: auto; /* long lines scroll sideways instead of wrapping */
+  overflow-x: auto; 
   font-family: Menlo, Consolas, "Liberation Mono", monospace;
   font-size: 0.875rem;
   line-height: 1.5;
@@ -125,3 +141,43 @@ body {
 .token-selector { color: #ff97a0; }
 .token-property { color: #7dd3fc; }
 .token-value    { color: #fcd34d; }
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1; 
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.25rem;
+  letter-spacing: 0.05em;
+}
+
+header nav a {
+  color: var(--code-muted);
+  text-decoration: none;
+  margin-left: 1.5rem;
+}
+
+header nav a:hover {
+  color: var(--text);
+}
+
+@media (max-width: 600px) {
+  header {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  header nav a {
+    margin: 0 0.75rem;
+  }
+}
