@@ -1,0 +1,104 @@
+:root {
+  --page-bg: #0f172a;
+  --card-bg: #4b5563;
+  --card-border: #ffffff;
+  --text: #f8fafc;
+  --code-bg: #1e293b;
+  --code-border: #334155;
+  --code-muted: #94a3b8;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Georgia, -apple-system, "Georgia", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--page-bg);
+  color: var(--text);
+  line-height: 1.6;
+  padding: 2rem 1rem;
+  min-height: 80dvh; /* page is always at least as tall as the screen */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Cards flow left to right and wrap onto a new row when they run out of space */
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center; /* change to flex-start to line the cards up on the left */
+  gap: 1.5rem;
+  margin-top: auto; /* takes up all the spare space above, pushing the cards to the bottom */
+}
+
+.card {
+  flex: 0 1 260px; /* each card is 260px wide, shrinking on small screens */
+  background: var(--card-bg);
+  border: 2px solid var(--card-border);
+  border-radius: 12px;
+  overflow: hidden; /* keeps contents inside the rounded corners */
+}
+
+.card-image {
+  display: block;
+  width: 100%; /* spans border to border; the card's overflow: hidden rounds the top corners */
+  height: 180px;
+  object-fit: cover;
+}
+
+.card-title {
+  border-top: 2px solid var(--card-border);
+  padding: 0.75rem 1rem;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* Code snippet box, styled after MDN's code examples */
+.code-example {
+  width: 100%;
+  max-width: calc(3 * 260px + 2 * 1.5rem); /* same width as a full row of cards */
+  margin-top: auto; /* pushes the box and the cards below it to the bottom */
+  margin-left: auto;
+  margin-right: auto;
+  background: var(--code-bg);
+  border: 1px solid var(--code-border);
+  border-radius: 8px;
+  overflow: hidden; /* keeps the header inside the rounded corners */
+}
+
+/* The box now does the pushing, so the cards just sit below it */
+.code-example + .card-container {
+  margin-top: 1.5rem;
+}
+
+/* Top strip with the language label and the copy button */
+.code-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.4rem 1rem;
+  border-bottom: 1px solid var(--code-border);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 0.8rem;
+  color: var(--code-muted);
+}
+
+.code-example pre {
+  margin: 0;
+  padding: 1rem;
+  overflow-x: auto; /* long lines scroll sideways instead of wrapping */
+  font-family: Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 0.875rem;
+  line-height: 1.5;
+}
+
+/* Syntax highlighting colours */
+.token-comment  { color: var(--code-muted); font-style: italic; }
+.token-selector { color: #ff97a0; }
+.token-property { color: #7dd3fc; }
+.token-value    { color: #fcd34d; }

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abyss</title>
+  <link rel="stylesheet" href="css/cards.css">
+</head>
+<body>
+  <section class="code-example" aria-label="CSS example">
+    <div class="code-header">
+      <span>CSS using the &lt;code&gt; tag</span>
+      <button class="copy-button" type="button">Copy</button>
+    </div>
+    <!-- Lines inside <pre> keep their exact spacing, so they are not indented to match the HTML -->
+    <pre><code><span class="token-comment">/* Cards flow left to right and wrap onto a new row when they run out of space */</span>
+    <span class="token-selector">.card-container</span> {
+    <span class="token-property">display</span>: <span class="token-value">flex</span>;
+    <span class="token-property">flex-wrap</span>: <span class="token-value">wrap</span>;
+    <span class="token-property">flex-direction</span>: <span class="token-value">row</span>;
+    <span class="token-property">justify-content</span>: <span class="token-value">center</span>; <span class="token-comment">/* change to flex-start to line the cards up on the left */</span>
+    <span class="token-property">gap</span>: <span class="token-value">1.5rem</span>;
+    <span class="token-property">margin-top</span>: <span class="token-value">auto</span>; <span class="token-comment">/* takes up all the spare space above, pushing the cards to the bottom */</span>
+    }</code></pre>
+  </section>
+
+  <main class="card-container">
+    <article class="card">
+      <a href="https://madeinabyss.fandom.com/wiki/Riko" target="_blank">
+        <img class="card-image" src="https://placehold.co/400x300?text=Card+One" alt="Placeholder image for card one">
+      </a>
+      <h2 class="card-title">Riko</h2>
+    </article>
+
+    <article class="card">
+      <img class="card-image" src="https://placehold.co/400x300?text=Card+Two" alt="Placeholder image for card two">
+      <h2 class="card-title">Reg</h2>
+    </article>
+
+    <article class="card">
+      <img class="card-image" src="https://placehold.co/400x300?text=Card+Three" alt="Placeholder image for card three">
+      <h2 class="card-title">Nanachi</h2>
+    </article>
+  </main>
+</body>
+</html>
