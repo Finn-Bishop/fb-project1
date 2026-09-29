@@ -36,16 +36,15 @@ body {
 }
 
 .card {
-  flex: 0 1 260px; /* each card is 260px wide, shrinking on small screens */
-  background: var(--card-bg);
+  flex: 0 1 260px; 
   border: 2px solid var(--card-border);
   border-radius: 12px;
-  overflow: hidden; /* keeps contents inside the rounded corners */
+  overflow: hidden; 
 }
 
 .card-image {
   display: block;
-  width: 100%; /* spans border to border; the card's overflow: hidden rounds the top corners */
+  width: 100%; 
   height: 180px;
   object-fit: cover;
 }
@@ -58,7 +57,7 @@ body {
   font-weight: 600;
 }
 
-/* Home button centred below the row of cards */
+
 .home-nav {
   display: flex;
   justify-content: center;
@@ -81,29 +80,26 @@ body {
   background: var(--code-border);
 }
 
-/* Code snippet box, styled after MDN's code examples */
+
 .code-example {
   width: 100%;
-  max-width: calc(3 * 260px + 2 * 1.5rem); /* same width as a full row of cards */
-  margin-top: auto; /* pushes the box and the cards below it to the bottom */
-  margin-left: auto;
+  max-width: calc(3 * 260px + 2 * 1.5rem); 
   margin-right: auto;
   background: var(--code-bg);
   border: 1px solid var(--code-border);
   border-radius: 8px;
-  overflow: hidden; /* keeps the header inside the rounded corners */
+  overflow: hidden; 
 }
 
-/* The box now does the pushing, so the cards just sit below it */
+
 .code-example + .card-container {
   margin-top: 1.5rem;
 }
 
-/* Collapsible summary box, placed like the code box above the cards */
 .summary-box {
   width: 100%;
-  max-width: calc(3 * 260px + 2 * 1.5rem); /* same width as a full row of cards */
-  margin: auto auto 0; /* pushed to the bottom and centred */
+  max-width: calc(3 * 260px + 2 * 1.5rem); 
+  margin: auto auto 0; 
   padding: 1rem;
   background: var(--code-bg);
   border: 1px solid var(--code-border);
@@ -115,7 +111,7 @@ body {
   margin-top: 1.5rem;
 }
 
-/* Top strip with the language label and the copy button */
+
 .code-header {
   display: flex;
   justify-content: space-between;
