@@ -58,6 +58,29 @@ body {
   font-weight: 600;
 }
 
+/* Home button centred below the row of cards */
+.home-nav {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.home-button {
+  display: inline-block;
+  padding: 0.6rem 2rem;
+  background: var(--card-bg);
+  border: 2px solid var(--card-border);
+  border-radius: 999px; /* pill shape */
+  color: var(--text);
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+
+.home-button:hover {
+  background: var(--code-border);
+}
+
 /* Code snippet box, styled after MDN's code examples */
 .code-example {
   width: 100%;
